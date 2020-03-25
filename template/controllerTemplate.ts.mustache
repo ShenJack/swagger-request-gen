@@ -1,0 +1,16 @@
+import axios from 'axios'
+
+{{#imports}}
+    import { {{importName}} } from "../definitions/{{&importName}}"
+{{/imports}}
+
+{{#methodRequests}}
+    export function api{{capitalizedMethod}}{{&requestName}}({{#parameters}}
+        {{&paramName}}:{{&paramType}}{{&paramRequired}},
+    {{/parameters}}){
+        return axios.request({
+            url:`{{&url}}`,
+            method:`{{&method}}`,
+        })
+    }
+{{/methodRequests}}

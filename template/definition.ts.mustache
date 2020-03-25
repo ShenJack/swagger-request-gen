@@ -1,0 +1,9 @@
+{{#imports}}
+    import { {{importName}} } from "{{&importPath}}"
+{{/imports}}
+
+export interface {{definationName}}{
+    {{#properties}}
+        {{keyName}}:{{type}},
+    {{/properties}}
+}
