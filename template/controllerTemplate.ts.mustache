@@ -11,6 +11,15 @@ import axios from 'axios'
         return axios.request({
             url:`{{&url}}`,
             method:`{{&method}}`,
+            params:{
+            {{#parametersInQuery}}
+                {{paramName}}:{{paramName}},
+            {{/parametersInQuery}}
+            },
+            {{#parametersInBody}}
+                data:{{paramName}},
+            {{/parametersInBody}}
+
         })
     }
 {{/methodRequests}}

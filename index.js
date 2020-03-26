@@ -75,9 +75,12 @@ function renderDefinition(definationName, definition) {
 }
 
 function makeRequest(request, tagContext) {
+    const parameters = request.parameters ? makeParameters(request.parameters, tagContext) : [];
     let result = {
         requestName: request.summary[0].toUpperCase() + request.summary.slice(1, request.summary.length),
-        parameters: request.parameters ? makeParameters(request.parameters, tagContext) : [],
+        parameters: parameters,
+        parametersInQuery: parameters.filter(item => item.in === 'query'),
+        parametersInBody: parameters.filter(item => item.in === 'body'),
         url: makeRequestUrl(request),
         method: request.method,
         capitalizedMethod: request.method[0].toUpperCase() + request.method.slice(1, request.method.length),
@@ -96,6 +99,7 @@ function makeParameters(parameters, tagContext) {
             paramName: param.name,
             paramRequired: param.required ? "" : "?",
             paramType: TYPES_MAP.hasOwnProperty(param.type) ? TYPES_MAP[param.type] : findSchemaType(param.schema.$ref, tagContext),
+            ...param
         }
     })
 }
