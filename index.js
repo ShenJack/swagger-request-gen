@@ -76,7 +76,7 @@ function renderDefinition(definationName, definition) {
 
 function makeRequest(request, tagContext) {
     const parameters = request.parameters ? makeParameters(request.parameters, tagContext) : [];
-    let result = {
+    return {
         requestName: request.summary[0].toUpperCase() + request.summary.slice(1, request.summary.length),
         parameters: parameters,
         parametersInQuery: parameters.filter(item => item.in === 'query'),
@@ -85,8 +85,6 @@ function makeRequest(request, tagContext) {
         method: request.method,
         capitalizedMethod: request.method[0].toUpperCase() + request.method.slice(1, request.method.length),
     }
-
-    return result
 }
 
 function makeRequestUrl(request) {
