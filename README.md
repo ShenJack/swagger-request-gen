@@ -1,1 +1,2 @@
-## swagger ts axios 请求生成器
+# swagger-typescript-request-generator
+generate typescript request with swagger document
