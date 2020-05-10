@@ -1,6 +1,7 @@
 {
   "name": "swagger-request-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "repository": "https://github.com/ShenJack/swagger-request-gen",
   "description": "",
   "bin": {
     "gen-request": "./lib/bin/gen-request.js"
