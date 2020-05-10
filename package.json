@@ -1,5 +1,5 @@
 {
-  "name": "swagger-typescript-requestgenerator",
+  "name": "swagger-request-gen",
   "version": "1.0.0",
   "description": "",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rimraf ./output/ && node ./lib/bin/gen-request",
     "gen-request": "rimraf ./output/ && node ./lib/bin/gen-request http://localhost:8081/v1/v2/api-docs ./gen/request",
-    "test-lib": "gen-request http://localhost:8081/v1/v2/api-docs ./gen/request"
+    "test-lib": "gen-request http://localhost:8081/v1/v2/api-docs ./request"
   },
   "keywords": [
     "swagger",
@@ -26,6 +26,6 @@
     "npm": "^6.14.5",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.2",
-    "swagger-typescript-requestgenerator": "^1.0.0"
+    "swagger-typescript-requestgenerator": "^1.0.1"
   }
 }
