@@ -1,18 +1,31 @@
 {
-  "name": "requestgenerator",
+  "name": "swagger-typescript-requestgenerator",
   "version": "1.0.0",
   "description": "",
+  "bin": {
+    "gen-request": "./lib/bin/gen-request.js"
+  },
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./output/ && node ./index.js"
+    "build": "rimraf ./output/ && node ./lib/bin/gen-request",
+    "gen-request": "rimraf ./output/ && node ./lib/bin/gen-request http://localhost:8081/v1/v2/api-docs ./gen/request",
+    "test-lib": "gen-request http://localhost:8081/v1/v2/api-docs ./gen/request"
   },
-  "author": "",
+  "keywords": [
+    "swagger",
+    "typescript",
+    "axios",
+    "request"
+  ],
+  "author": "shenjack",
   "license": "ISC",
   "dependencies": {
     "@types/mustache": "^4.0.1",
     "axios": "^0.19.2",
     "mustache": "^4.0.1",
+    "npm": "^6.14.5",
     "prettier": "^2.0.2",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "swagger-typescript-requestgenerator": "^1.0.0"
   }
 }
