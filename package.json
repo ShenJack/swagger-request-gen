@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/mustache": "^4.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "mustache": "^4.0.1",
     "npm": "^6.14.5",
     "prettier": "^2.0.2",
